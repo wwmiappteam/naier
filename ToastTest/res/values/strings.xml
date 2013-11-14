@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="hello">Hello World, ToastTest!</string>
-    <string name="app_name">ToastTest</string>
-    <string name="btnToast">测试文本Toast</string>
-    <string name="btnImageToast">测试图片Toast</string>
-    <string name="btnLayToast">测试子Toast</string>
-</resources>
