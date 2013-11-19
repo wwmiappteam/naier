@@ -61,8 +61,8 @@
 		<form id="loginform" action="./login.php" method="post">
 			<div class="loginbox">
 				<ul class="ul">
-					<li style="maring-top:0px;height:25px;font-size:16px;">欢迎登录33奈尔家政后台系统</li>
-		        	<li><span class="infoname3">用3户名：</span><input type="text" name="login" class="text01"></li>
+					<li style="maring-top:0px;height:25px;font-size:16px;">欢迎登录奈尔家政后台系统</li>
+		        	<li><span class="infoname3">用户名：</span><input type="text" name="login" class="text01"></li>
 		        	<li><span class="infoname3">密码：</span><input type="password" name="password" class="text01"></li>
 		        	<li><a href="javascript:void(0);" onclick="$('#loginform').submit();" class="easyui-linkbutton">登录</a>&nbsp;&nbsp;
 		        		<a href="#" onclick="$('input[type=reset]').trigger('click');" class="easyui-linkbutton">重置</a>
