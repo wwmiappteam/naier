@@ -6,36 +6,43 @@
 	if($action=="list"){
 		$page = $_REQUEST["page"];
 		$rows = $_REQUEST["rows"];
-		$sql = "select * from member";
-		$result = mysql_query($sqltotal,$con);
-		$mobilenum = $_REQUEST['mobilenum'];
-		$param = null;
-		if($mobilenum!=""){
-			$param = array();
-			$param["mobilenum"]=" like '%".$mobilenum."%'";
+		$sql = "select * from custom ";
+		$custom_username = $_REQUEST["custom_username"];
+		$custom_name = $_REQUEST["custom_name"];
+		$sql = $sql." where 1=1 ";
+		if($custom_username!=""){
+			$sql = $sql." and custom_username like '%$custom_username%' ";
 		}
-		echo  query_page($con,$sql,$param,$page,$rows,null);
+		if($custom_name!=""){
+			$sql = $sql." and custom_name like '%$custom_name%' ";
+		}
+		$result = mysql_query($sql,$con);
+		$json = array();
+  		$json["total"] =  mysql_num_rows($result);
+  		$sql = $sql." order by id desc ";
+  		if(isset($page)&&isset($rows)){
+	  		$sql = $sql." limit ".($page-1)*$rows.",".$page*$rows;
+  		}
+  		$result = mysql_query($sql,$con);
+  		$json["rows"] = array();
+  		while($row=mysql_fetch_assoc($result)){
+  			array_push($json["rows"], $row);
+  		}
+  		echo json($json);
 	}else if($action=="delete"){
-		$sql = "delete from member where memberid=".$_REQUEST['id'];
-		echo $sql;
+		$sql = "delete from custom where id=".$_REQUEST['id'];
 		mysql_query($sql);
 		echo "success";
 	}else if($action=="edit"){
-		$id = $_REQUEST["id"];		
-		$name = $_REQUEST["name"];		
-		$mobilenum = $_REQUEST["mobilenum"];		
-		$points = $_REQUEST["points"];		
-		$work = $_REQUEST["work"];		
-		$sex = $_REQUEST["sex"];		
-		$birthday = $_REQUEST["birthday"];		
-		$addr = $_REQUEST["addr"];		
-		$email = $_REQUEST["email"];		
-		$passcode = $_REQUEST["passcode"];		
-		$qq = $_REQUEST["qq"];
+		$custom_username = $_REQUEST["custom_username"];		
+		$custom_cellphone = $_REQUEST["custom_cellphone"];		
+		$custom_password = $_REQUEST["custom_password"];		
+		$custom_name = $_REQUEST["custom_name"];		
+		$custom_address = $_REQUEST["custom_address"];		
 		
-		$sql = "update member set name='$name',mobilenum='$mobilenum',points='$points',work='$work',sex='$sex',birthday='$birthday',addr='$addr',email='$email',passcode='$passcode',qq='$qq' where memberid=$id";
+		$sql = "update custom set custom_cellphone='$custom_cellphone',custom_password='$custom_password',custom_name='$custom_name',custom_address='$custom_address' where custom_username='$custom_username'";
 		mysql_query($sql);
-		header("location:./member_list.php");
+		header("location:./custom_list.php");
 	}
 ?>
 

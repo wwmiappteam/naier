@@ -12,7 +12,7 @@
 	$result = mysql_query($sql,$con);
 	while($row=mysql_fetch_assoc($result)){
   		$tmp = array();
-  		$tmp['id']=$row['id'];
+  		$tmp['activeID']=$row['id'];
   		$tmp['activeTitle']=$row['active_title'];
   		if($row["active_poster"]!=""){
 	  		$tmp['activePoster']=$base.$row['active_poster'];

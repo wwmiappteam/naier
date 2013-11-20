@@ -12,7 +12,7 @@
 	$result = mysql_query($sql,$con);
 	while($row=mysql_fetch_assoc($result)){
   		$tmp = array();
-  		$tmp['id']=$row['id'];
+  		$tmp['businessID']=$row['id'];
   		$tmp['busiTitle']=$row['busi_title'];
   		$tmp['busiPrice']=$row['busi_price'];
   		$tmp['busiIntroduce']=$row['busi_introduce_interface'];

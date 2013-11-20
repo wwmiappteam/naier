@@ -7,7 +7,7 @@
 	$json['data'] = array();
 	while($row=mysql_fetch_assoc($result)){
 		$tmp = array();
-		$tmp['id']=$row['id'];
+		$tmp['keeperTypeID']=$row['id'];
 		$tmp['typeName']=$row['type_name'];
 		$tmp['typeCode']=$row['type_code'];
 		$tmp['typeDescription']=$row['type_description'];
@@ -17,7 +17,7 @@
 		$tmp['keepers'] = array();
 		while($subrow=mysql_fetch_assoc($subresult)){
 			$subtmp = array();
-			$subtmp['id']=$subrow['id'];
+			$subtmp['keeperID']=$subrow['id'];
 			$subtmp['keeperName']=$subrow['keeper_name'];
 			if($subrow['keeper_photo']!= ""){
 				$subtmp['keeperPhoto']=$base.$subrow['keeper_photo'];

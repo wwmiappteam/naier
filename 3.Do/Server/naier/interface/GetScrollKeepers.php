@@ -7,7 +7,7 @@
 	$json['data'] = array();
 	while($row=mysql_fetch_assoc($result)){
 		$tmp = array();
-		$tmp['id'] = $row['id'];
+		$tmp['keeperID'] = $row['id'];
 		if($row['keeper_photo']!=""){
 			$tmp['keeperPhoto'] = $base.$row['keeper_photo'];
 		}else{

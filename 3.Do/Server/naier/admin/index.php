@@ -52,6 +52,8 @@ function initframe(){
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./service_list.php');"  class="icon-gears">服务管理</a></li>
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./active_list.php');"  class="icon-gears">新闻活动</a></li>
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./shop_list.php');"  class="icon-gears">门市管理</a></li>
+		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./custom_list.php');"  class="icon-gears">顾客管理</a></li>
+		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./admin_list.php');"  class="icon-gears">管理员</a></li>
 				</ul>
 		    </div>
 		    <div title="私人秘书"  style="">

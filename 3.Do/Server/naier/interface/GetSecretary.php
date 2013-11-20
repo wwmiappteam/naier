@@ -2,8 +2,8 @@
 	include_once 'common.php';
 	$currentPage = $_REQUEST['currentPage'];
 	$pageRows = $_REQUEST['pageRows'];
-	$typeId = $_REQUEST['typeId'];
-	$regionId = $_REQUEST['regionId'];
+	$typeId = $_REQUEST['typeID'];
+	$regionId = $_REQUEST['regionID'];
 	$title = $_REQUEST['title'];
   	$sql = "select a.id,a.title,a.address as address,b.region_name as regionName,c.cat as typeName from secretary_info a,secretary_region b,secretary_type c where a.type_id=c.cid and a.region_id=b.id ";
 	if($typeId!=""){
@@ -25,7 +25,7 @@
 	$result = mysql_query($sql,$con);
 	while($row=mysql_fetch_assoc($result)){
   		$tmp = array();
-  		$tmp['id']=$row['id'];
+  		$tmp['secretaryID']=$row['id'];
   		$tmp['typeName']=$row['typeName'];
   		$tmp['regionName']=$row['regionName'];
   		$tmp['title']=$row['title'];

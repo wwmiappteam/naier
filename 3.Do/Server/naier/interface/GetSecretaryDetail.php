@@ -1,6 +1,6 @@
 <?php
 	include_once 'common.php';
-	$id = $_REQUEST["id"];
+	$id = $_REQUEST["secretaryID"];
   	$sql = "select a.*,b.region_name as regionName,c.cat as typeName from secretary_info a,secretary_region b,secretary_type c where a.type_id=c.cid and a.region_id=b.id  and a.id=$id";
 	$result = mysql_query($sql,$con);
 	$info = mysql_fetch_assoc($result);
@@ -9,7 +9,7 @@
 	$result = mysql_query($sql,$con);
 	if($row=mysql_fetch_assoc($result)){
   		$tmp = array();
-  		$tmp['id']=$row['id'];
+  		$tmp['secretaryID']=$row['id'];
   		$tmp['typeName']=$row['typeName'];
   		$tmp['regionName']=$row['regionName'];
   		$tmp['title']=$row['title'];

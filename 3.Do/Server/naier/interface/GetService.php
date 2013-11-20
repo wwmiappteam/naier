@@ -12,7 +12,7 @@
 	$result = mysql_query($sql,$con);
 	while($row=mysql_fetch_assoc($result)){
   		$tmp = array();
-  		$tmp['id']=$row['id'];
+  		$tmp['serviceID']=$row['id'];
   		$tmp['servTitle']=$row['serv_title'];
   		$tmp['servIntroduce']=$row['serv_introduce_interface'];
   		array_push($json["data"], $tmp);

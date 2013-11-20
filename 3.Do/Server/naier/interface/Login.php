@@ -1,53 +1,50 @@
 <?php
 	//8、登录
 	include_once 'common.php';
-	$login = $_REQUEST['userName'];
-	$password = $_REQUEST['pwd'];
-	$msg = "";
+	$username = $_REQUEST['username'];
+	$password = $_REQUEST['password'];
 	$json = array();
-	$json["userId"] = "";
-	$json["userIntegral"] = "";
-	$json["installPhone"] = "";
-	$json["servicePhone"] = "";
+	$json['data'] = array();
+	$json['data']["id"] = "";
+	$json['data']["userName"] = "";
+	$json['data']["password"] = "";
+	$json['data']["cellphone"] = "";
+	$json['data']["name"] = "";
+	$json['data']["address"] = "";
+	$json['data']["orderList"] = array();
 	$json["msg"] = "";
-	if(isset($login)&&isset($password)){
-		$sql = "select * from member where mobilenum='".$login."'";
+	if(isset($username)&&isset($password)){
+		$sql = "select * from custom where custom_username='".$username."'";
 		$result = mysql_query($sql,$con);
 		$row=mysql_fetch_assoc($result);
-		if(isset($row['password'])){
-			if(md5($password)==$row['password']){
-				$json["userid"] = $row["memberid"];
-				$json["mobilenum"] = $row["mobilenum"];
-				$json["password"] = $password;
-				$json["name"] = $row["name"];
-				$json["work"] = $row["work"];
-				$json["sex"] = $row["sex"];
-				$json["birthday"] = $row["birthday"];
-				$json["addr"] = $row["addr"];
-				$json["email"] = $row["email"];
-				$json["passcode"] = $row["passcode"];
-				$json["qq"] = $row["qq"];
-				$json["inviteCode"] = $row["invitecode"];
+		if(isset($row['custom_password'])){
+			if($password==$row['custom_password']){
+				$json['data']["customID"] = $row['id'];
+				$json['data']["userName"] = $row['custom_username'];
+				$json['data']["password"] = $row['custom_password'];
+				$json['data']["cellphone"] = $row['custom_cellphone'];
+				$json['data']["name"] = $row['custom_name'];
+				$json['data']["address"] = $row['custom_address'];
 				
-				//每日登录增加积分
-				$today = date('Y-m-d');
-				if($row["llogintime"]!=$today){
-					$everyday_point=5;
-					$points = intval($row["points"])+$everyday_point;
-					$row["points"] = $points;
-					$time = time();
-					$addPoint = "update member set points=$points,llogintime='$today',shopviewnum=0 where memberid=".$row["memberid"];
-					mysql_query($addPoint);
+				$subsql = "select * from keeper_order o,keeper_info info,keeper_type type where
+				 o.keeper_id=info.id and info.keeper_type_id=type.id and o.custom_id=".$row['id'];
+				$subresult = mysql_query($subsql);
+				while($subrow=mysql_fetch_assoc($subresult)){
+					$tmp = array();
+					$tmp["orderID"] = $subrow["id"];
+					$tmp["keeperID"] = $subrow["keeper_id"];
+					$tmp["keeperName"] = $subrow["keeper_name"];
+					$tmp["keeperTypeDescription"] = $subrow["type_description"];
+					if($subrow["keeper_photo"]!=""){
+						$tmp["keeperPhoto"] = $base.$subrow["keeper_photo"];
+					}else{
+						$tmp["keeperPhoto"] = "";
+					}
+					$tmp["startTime"] = $subrow["start_time"];
+					$tmp["endTime"] = $subrow["end_time"];
+					array_push($json['data']["orderList"], $tmp);
 				}
-				//首次登录增加积分20
-				if($row["logined"]=="0"){
-					$first_point=20;
-					$points = intval($row["points"])+$first_point;
-					$row["points"] = $points;
-					$addPoint = "update member set points=$points,logined=1 where memberid=".$row["memberid"];
-					mysql_query($addPoint);
-				}
-				$json["points"] = $row["points"];
+				
 			}else{
 				$json["msg"]="密码不正确！";
 			}

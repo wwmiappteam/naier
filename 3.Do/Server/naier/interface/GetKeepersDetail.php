@@ -1,7 +1,7 @@
 <?php
 	//7、根据活动查询商品列表
 	include_once 'common.php';
-	$id = $_REQUEST["id"];
+	$id = $_REQUEST["keeperID"];
 	$sql = "select * from keeper_info where id=$id";
 	$result = mysql_query($sql,$con);
 	
@@ -9,7 +9,7 @@
 	$json['data'] = array();
 	if($row=mysql_fetch_assoc($result)){
 		$tmp = array();
-		$tmp['id']=$row['id'];
+		$tmp['keeperID']=$row['id'];
 		$subsql = "select type_name from keeper_type where id='".$row['keeper_type_id']."' ";
   		$subresult = mysql_query($subsql);
   		$subrow = mysql_fetch_assoc($subresult);

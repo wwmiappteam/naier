@@ -6,7 +6,7 @@
 <?php include_once 'common.php'; ?>
 <?php 
 	$id = $_REQUEST["id"];
-	$sql = "select * from member where memberid=$id";
+	$sql = "select * from custom where id=$id";
 	$result = mysql_query($sql);
 	$info = mysql_fetch_assoc($result);
 ?>
@@ -22,23 +22,18 @@ function sForm(){
 }
 </script>
 </head>
-<body nav="会员编辑页面" class="iframebody">
-	<form id="aform" action="./member_service.php" method="post" enctype="multipart/form-data">
+<body nav="顾客编辑页面" class="iframebody">
+	<form id="aform" action="./custom_service.php" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="action" value="edit" />
-	<input type="hidden" name="id" value="<?php echo $info["memberid"];?>" />
+	<input type="hidden" name="id" value="<?php echo $info["id"];?>" />
 	<fieldset id="myfieldset" class="myfieldset">
-	    <legend>会员信息</legend>
+	    <legend>顾客信息</legend>
 	    <ul class="myform">
-		 	<li class="one"><span class="myinfo">会员帐号：</span><input value="<?php echo $info["mobilenum"];?>" type="text" class="easyui-validatebox" data-options="required:true" name="mobilenum"/><span class="red">*</span></li>
-		 	<li class="one"><span class="myinfo">姓名：</span><input value="<?php echo $info["name"];?>" type="text" name="name"/></li>
-		 	<li class="one"><span class="myinfo">积分 ：</span><input value="<?php echo $info["points"];?>" type="text" name="points"/></li>
-		 	<li class="one"><span class="myinfo">职业：</span><input value="<?php echo $info["work"];?>" type="text" name="work"/></li>
-		 	<li class="one"><span class="myinfo">性别：</span><select name="sex"><option <?php if($info["sex"]=="0"){echo "selected=selected";}?> value="0">男</option><option <?php if($info["sex"]=="1")echo "selected=selected";?> value="1">女</option></select></li>
-		 	<li class="one"><span class="myinfo">生日：</span><input value="<?php echo $info["birthday"];?>" type="text" name="birthday"/></li>
-		 	<li class="one"><span class="myinfo">住址：</span><input value="<?php echo $info["addr"];?>" type="text" name="addr"/></li>
-		 	<li class="one"><span class="myinfo">电子邮箱：</span><input value="<?php echo $info["email"];?>" type="text" name="email"/></li>
-		 	<li class="one"><span class="myinfo">身份证号码：</span><input value="<?php echo $info["passcode"];?>" type="text" name="passcode"/></li>
-		 	<li class="one"><span class="myinfo">QQ：</span><input value="<?php echo $info["qq"];?>" type="text" name="qq"/></li>
+		 	<li class="one"><span class="myinfo">帐号：</span><input readonly="readonly" value="<?php echo $info["custom_username"];?>" type="text" class="easyui-validatebox" data-options="required:true" name="custom_username"/></li>
+		 	<li class="one"><span class="myinfo">电话：</span><input value="<?php echo $info["custom_cellphone"];?>" type="text" name="custom_cellphone"/></li>
+		 	<li class="one"><span class="myinfo">密码 ：</span><input value="<?php echo $info["custom_password"];?>" type="password" name="custom_password"/></li>
+		 	<li class="one"><span class="myinfo">姓名：</span><input value="<?php echo $info["custom_name"];?>" type="text" name="custom_name"/></li>
+		 	<li class="one"><span class="myinfo">地址：</span><input value="<?php echo $info['custom_address'];?>" type="text" name="custom_address"/></li>
 		 	<li class="button">
 		 		<a onclick="sForm();" href="#" class="easyui-linkbutton" >提交数据</a>
 		 	</li>
