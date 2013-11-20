@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2013-11-19 09:42:30
+Date: 2013-11-20 11:31:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -44,17 +44,23 @@ INSERT INTO `active` VALUES ('4', '金利科技', '', '', '', '', '', '', '0000-
 -- ----------------------------
 DROP TABLE IF EXISTS `advise`;
 CREATE TABLE `advise` (
-  `ID` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL auto_increment,
+  `custom_id` int(11) default NULL,
   `custom_cellphone` varchar(20) NOT NULL,
   `advise_content` varchar(500) NOT NULL,
-  `status` varchar(5) NOT NULL,
+  `status` varchar(5) NOT NULL default '0',
   `update_time` datetime NOT NULL,
-  PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of advise
 -- ----------------------------
+INSERT INTO `advise` VALUES ('1', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('2', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('3', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('4', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('5', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `business`
@@ -114,14 +120,21 @@ CREATE TABLE `complain` (
   `custom_id` int(10) NOT NULL,
   `keeper_id` int(11) NOT NULL,
   `complain_content` varchar(500) NOT NULL,
-  `status` varchar(5) NOT NULL,
+  `status` varchar(5) NOT NULL default '0',
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of complain
 -- ----------------------------
+INSERT INTO `complain` VALUES ('1', '0', '0', '', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('2', '1', '234', '234234234', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('3', '0', '23', '234234234', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('4', '0', '23', '234234234', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('5', '0', '2', '234234234', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('6', '0', '2', '234234234˹', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('7', '0', '2', '斯蒂芬', '0', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `custom`
@@ -134,13 +147,28 @@ CREATE TABLE `custom` (
   `custom_password` varchar(20) NOT NULL,
   `custom_name` varchar(10) NOT NULL,
   `custom_address` varchar(50) NOT NULL,
-  `update_time` datetime NOT NULL,
+  `update_time` varchar(50) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of custom
 -- ----------------------------
+INSERT INTO `custom` VALUES ('1', '1', '1231231', '123', '123234', '234243', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('3', 'sdf1', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('4', 'sdf2', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('5', 'sdf3', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('6', 'sdf4', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('7', 'sdf5', 'adminsdfsdf', 'sdfsdfsf', 'sdfasdsdfs', 'asdfsdfsdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('8', 'sdf6', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('9', 'sdfsf7', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('10', 'sdfsf8', '3333', 'dsa', 'np', '4444', '2013-11-19 05:55');
+INSERT INTO `custom` VALUES ('11', 'sdf9', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('12', 'sdf11', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('13', 'sdfsdf1111', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('14', '', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('15', 'aaa', 'dd', 'bbb', 'cc', 'ff', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('16', 'adaa', 'dd', 'bbb', 'cc', 'ff', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `keeper_info`
@@ -186,21 +214,22 @@ INSERT INTO `keeper_info` VALUES ('17', '1', '地方', '男', '', '/admin/upload
 -- ----------------------------
 DROP TABLE IF EXISTS `keeper_order`;
 CREATE TABLE `keeper_order` (
-  `ID` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL auto_increment,
   `custom_id` int(11) NOT NULL,
   `keeper_id` int(11) NOT NULL,
-  `keeper_type_id` int(11) NOT NULL,
   `start_time` varchar(10) NOT NULL,
-  `endtime` varchar(10) NOT NULL,
+  `end_time` varchar(10) NOT NULL,
   `order_description` varchar(200) default NULL,
   `order_status` varchar(5) NOT NULL,
   `update_time` datetime NOT NULL,
-  PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keeper_order
 -- ----------------------------
+INSERT INTO `keeper_order` VALUES ('1', '1', '9', '234', '234234', 'dd', '', '0000-00-00 00:00:00');
+INSERT INTO `keeper_order` VALUES ('2', '1', '9', '3w4', '234', null, '', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `keeper_type`
