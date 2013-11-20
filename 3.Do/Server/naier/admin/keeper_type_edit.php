@@ -36,7 +36,7 @@ function editcat(){
 	    <ul class="myform">
 	    <?php $index=1; while($row=mysql_fetch_assoc($result)){?>
 		 	<li class="three"><span class="myinfo">类型名：</span><?php echo $row['type_name'];?></li>
-		 	<li class="three"><span class="myinfo">类型描述：</span><input value="<?php echo $row['type_description']?>" type="text" name="type_description<?php echo $index;$index++;?>"/></li>
+		 	<li class="three"><span class="myinfo">类型描述：</span><input value="<?php echo $row['type_description']?>" type="text" style="width:600px;" name="type_description<?php echo $index;$index++;?>"/></li>
 	    <?php }?>
 		 	<li class="button">
 		 		<a onclick="sForm();" href="#" class="easyui-linkbutton" >提交数据</a>

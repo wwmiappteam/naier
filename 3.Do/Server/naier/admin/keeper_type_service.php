@@ -9,6 +9,7 @@ if($action=="edit"){
 	$type_description3 = $_REQUEST["type_description3"];
 	$type_description4 = $_REQUEST["type_description4"];
 	$type_description5 = $_REQUEST["type_description5"];
+	$type_description6 = $_REQUEST["type_description6"];
 	
 	$sql = "update keeper_type set type_description='$type_description1' where type_code='type_code_1'";
 	mysql_query($sql);
@@ -19,6 +20,8 @@ if($action=="edit"){
 	$sql = "update keeper_type set type_description='$type_description4' where type_code='type_code_4'";
 	mysql_query($sql);
 	$sql = "update keeper_type set type_description='$type_description5' where type_code='type_code_5'";
+	mysql_query($sql);
+	$sql = "update keeper_type set type_description='$type_description6' where type_code='type_code_6'";
 	mysql_query($sql);
 	header("location:./keeper_type_edit.php");
 }

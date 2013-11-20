@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2013-11-20 11:31:28
+Date: 2013-11-20 16:51:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -51,16 +51,16 @@ CREATE TABLE `advise` (
   `status` varchar(5) NOT NULL default '0',
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of advise
 -- ----------------------------
-INSERT INTO `advise` VALUES ('1', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
-INSERT INTO `advise` VALUES ('2', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
-INSERT INTO `advise` VALUES ('3', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
-INSERT INTO `advise` VALUES ('4', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
-INSERT INTO `advise` VALUES ('5', '1', '234234', 'asdfsadf', '', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('1', '17', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('2', '1', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('3', '1', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('4', '1', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('6', '18', '234234234', '234234', '1', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `business`
@@ -74,7 +74,7 @@ CREATE TABLE `business` (
   `busi_introduce_interface` text,
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of business
@@ -82,6 +82,7 @@ CREATE TABLE `business` (
 INSERT INTO `business` VALUES ('2', '', '', '', '', '0000-00-00 00:00:00');
 INSERT INTO `business` VALUES ('3', '业务1请问', '77请问', '<p>阿斯蒂芬请问请问</p>', '<p>阿斯蒂芬请问请问</p>', '0000-00-00 00:00:00');
 INSERT INTO `business` VALUES ('4', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `business` VALUES ('5', 'sdDF', '', '', '', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `company`
@@ -116,25 +117,26 @@ INSERT INTO `company` VALUES ('1', '/admin/upload/13847504821.jpg', '/admin/uplo
 -- ----------------------------
 DROP TABLE IF EXISTS `complain`;
 CREATE TABLE `complain` (
-  `ID` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL auto_increment,
   `custom_id` int(10) NOT NULL,
   `keeper_id` int(11) NOT NULL,
   `complain_content` varchar(500) NOT NULL,
   `status` varchar(5) NOT NULL default '0',
   `update_time` datetime NOT NULL,
-  PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of complain
 -- ----------------------------
-INSERT INTO `complain` VALUES ('1', '0', '0', '', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('2', '1', '234', '234234234', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('3', '0', '23', '234234234', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('4', '0', '23', '234234234', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('5', '0', '2', '234234234', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('6', '0', '2', '234234234˹', '0', '0000-00-00 00:00:00');
-INSERT INTO `complain` VALUES ('7', '0', '2', '斯蒂芬', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('8', '17', '18', '做事神戳戳的', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('9', '18', '19', '没吃干饭一样的', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('10', '17', '18', '', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('11', '17', '18', '', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('12', '17', '18', '', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('13', '17', '18', '', '0', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('14', '17', '18', '', '1', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('16', '17', '18', '', '1', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `custom`
@@ -149,26 +151,13 @@ CREATE TABLE `custom` (
   `custom_address` varchar(50) NOT NULL,
   `update_time` varchar(50) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of custom
 -- ----------------------------
-INSERT INTO `custom` VALUES ('1', '1', '1231231', '123', '123234', '234243', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('3', 'sdf1', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('4', 'sdf2', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('5', 'sdf3', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('6', 'sdf4', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('7', 'sdf5', 'adminsdfsdf', 'sdfsdfsf', 'sdfasdsdfs', 'asdfsdfsdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('8', 'sdf6', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('9', 'sdfsf7', '', '', '', '', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('10', 'sdfsf8', '3333', 'dsa', 'np', '4444', '2013-11-19 05:55');
-INSERT INTO `custom` VALUES ('11', 'sdf9', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('12', 'sdf11', 'admin', '123456', 'sdfasd', 'asdf', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('13', 'sdfsdf1111', '', '', '', '', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('14', '', '', '', '', '', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('15', 'aaa', 'dd', 'bbb', 'cc', 'ff', '0000-00-00 00:00:00');
-INSERT INTO `custom` VALUES ('16', 'adaa', 'dd', 'bbb', 'cc', 'ff', '0000-00-00 00:00:00');
+INSERT INTO `custom` VALUES ('17', 'xiaoming', '13568974453', '123456', '小明', '成都青羊区', '');
+INSERT INTO `custom` VALUES ('18', 'xiaohong', '123213123', '', '小红', '成都青羊', '');
 
 -- ----------------------------
 -- Table structure for `keeper_info`
@@ -192,22 +181,13 @@ CREATE TABLE `keeper_info` (
   `keeper_ispush` varchar(5) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keeper_info
 -- ----------------------------
-INSERT INTO `keeper_info` VALUES ('6', '2', '姓名1', '女', '年龄1', '/admin/upload/13846940241.jpg', '经验1', '级别1', '专业分值1', '态度分值1', '勤劳分值1', '细心分值1', '特长1', '自我介绍1', 'true', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('8', '1', '阿斯蒂芬', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('9', '1', '阿斯蒂芬', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('10', '1', '第三方', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('11', '1', '第三方', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('12', '1', '范德萨', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('13', '1', '斯蒂芬', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('14', '1', '第三方', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('15', '1', '地方', '男', '', '', '', '', '', '', '', '', '', '', 'true', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('16', '1', '电风扇', '男', '', '', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
-INSERT INTO `keeper_info` VALUES ('17', '1', '地方', '男', '', '/admin/upload/13847768521.jpg', '', '', '', '', '', '', '', '', 'false', '0000-00-00 00:00:00');
+INSERT INTO `keeper_info` VALUES ('18', '2', '李嫂', '女', '35', '', '4', '4', '4', '4', '4', '4', '4', '从事该行业多年', '1', '0000-00-00 00:00:00');
+INSERT INTO `keeper_info` VALUES ('19', '3', '张哥', '男', '40', '', '3', '3', '3', '3', '3', '3', '3', '从事该行业多年', '1', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `keeper_order`
@@ -223,13 +203,12 @@ CREATE TABLE `keeper_order` (
   `order_status` varchar(5) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keeper_order
 -- ----------------------------
-INSERT INTO `keeper_order` VALUES ('1', '1', '9', '234', '234234', 'dd', '', '0000-00-00 00:00:00');
-INSERT INTO `keeper_order` VALUES ('2', '1', '9', '3w4', '234', null, '', '0000-00-00 00:00:00');
+INSERT INTO `keeper_order` VALUES ('4', '18', '19', '2013年10月1', '2013年11月1', '煮饭1', '', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `keeper_type`
@@ -242,7 +221,7 @@ CREATE TABLE `keeper_type` (
   `type_description` varchar(100) NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of keeper_type
@@ -252,6 +231,7 @@ INSERT INTO `keeper_type` VALUES ('2', '形象设计', 'type_code_2', '形象设
 INSERT INTO `keeper_type` VALUES ('3', '居家环境', 'type_code_3', '居家环境的描述', '2013-11-12 11:11:11');
 INSERT INTO `keeper_type` VALUES ('4', '营养健康', 'type_code_4', '营养健康的描述', '2013-11-12 11:11:11');
 INSERT INTO `keeper_type` VALUES ('5', '住家明星', 'type_code_5', '住家明星的描述', '2013-11-12 11:11:11');
+INSERT INTO `keeper_type` VALUES ('6', '装修咨询', 'type_code_6', '装修咨询的描述', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `secretary_info`
@@ -387,9 +367,21 @@ CREATE TABLE `sys_user` (
   `note` varchar(100) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `login_u` USING BTREE (`login`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('22', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin', null, null, null);
+
+-- ----------------------------
+-- View structure for `complain_view`
+-- ----------------------------
+DROP VIEW IF EXISTS `complain_view`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `complain_view` AS select `complain`.`id` AS `complainid`,`complain`.`custom_id` AS `custom_id`,`complain`.`keeper_id` AS `keeper_id`,`complain`.`complain_content` AS `complain_content`,`complain`.`status` AS `status`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`id` AS `info.id`,`keeper_type`.`id` AS `type_id`,`keeper_type`.`type_name` AS `type_name`,`custom`.`id` AS `id`,`custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name` from ((((`keeper_info` join `complain`) join `keeper_type`) join `custom`) join `orderinfo_view`) where ((`complain`.`custom_id` = `custom`.`id`) and (`complain`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;
+
+-- ----------------------------
+-- View structure for `orderinfo_view`
+-- ----------------------------
+DROP VIEW IF EXISTS `orderinfo_view`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `orderinfo_view` AS select `custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_type`.`id` AS `id`,`keeper_type`.`type_name` AS `type_name`,`keeper_order`.`start_time` AS `start_time`,`keeper_order`.`end_time` AS `end_time`,`keeper_order`.`custom_id` AS `custom_id`,`keeper_order`.`keeper_id` AS `keeper_id`,`keeper_order`.`order_description` AS `order_description`,`keeper_order`.`id` AS `orderid` from (((`keeper_order` join `keeper_info`) join `keeper_type`) join `custom`) where ((`keeper_order`.`custom_id` = `custom`.`id`) and (`keeper_order`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;
