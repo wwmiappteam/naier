@@ -3,7 +3,8 @@
 	$custom_id = $_REQUEST['customID'];
 	$custom_cellphone = $_REQUEST['cellphone'];
 	$advise_content = $_REQUEST['adviseContent'];
-	$sql = "insert into advise(custom_id,custom_cellphone,advise_content) values('$custom_id','$custom_cellphone','$advise_content')";
+	$timefmt = date("Y-m-d H:i");
+	$sql = "insert into advise(custom_id,custom_cellphone,advise_content,update_time) values('$custom_id','$custom_cellphone','$advise_content','$timefmt')";
 	$json = array();
 	if(mysql_query($sql,$con)){
 		$json['msg'] = "";

@@ -42,9 +42,9 @@
 			move_uploaded_file($_FILES["active_poster"]["tmp_name"],"./upload/".$filename);
 			$imgurl = "/admin/upload/".$filename;
 		}
-		
-		$sql = "insert into active(active_title,active_start,active_end,active_tel,active_description,active_description_interface,active_poster)
-		 values ('$active_title','$active_start','$active_end','$active_tel','$active_description','$active_description_interface','$imgurl')";
+		$timefmt = date("Y-m-d H:i");
+		$sql = "insert into active(active_title,active_start,active_end,active_tel,active_description,active_description_interface,active_poster,update_time)
+		 values ('$active_title','$active_start','$active_end','$active_tel','$active_description','$active_description_interface','$imgurl','$timefmt')";
 		mysql_query($sql,$con);
 		header("Location:./active_list.php");
 	}else if($action=="listAll"){

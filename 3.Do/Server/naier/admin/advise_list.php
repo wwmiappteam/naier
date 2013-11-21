@@ -71,6 +71,7 @@ function query(){
                 <th data-options="field:'custom_name',width:150">顾客姓名</th>
                 <th data-options="field:'custom_cellphone',width:150">顾客电话</th>
                 <th data-options="field:'advise_content',width:150">建议内容</th>
+                <th data-options="field:'update_time',width:110">创建时间</th>
                 <th data-options="field:'status',width:150" formatter="statusFormater">是否处理</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>

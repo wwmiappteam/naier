@@ -3,7 +3,8 @@
 	$custom_id = $_REQUEST['customID'];
 	$keeper_id = $_REQUEST['keeperID'];
 	$complain_content = $_REQUEST['complainContent'];
-	$sql = "insert into complain(custom_id,keeper_id,complain_content) values('$custom_id','$keeper_id','$complain_content')";
+	$timefmt = date("Y-m-d H:i");
+	$sql = "insert into complain(custom_id,keeper_id,complain_content,update_time) values('$custom_id','$keeper_id','$complain_content','$timefmt')";
 	$json = array();
 	if(mysql_query($sql,$con)){
 		$json['msg'] = "";

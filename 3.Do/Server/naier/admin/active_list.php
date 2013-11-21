@@ -57,6 +57,7 @@ function imgFormatter(value, rowData, rowIndex) {
                 <th data-options="field:'active_start',width:150">活动开始时间</th>
                 <th data-options="field:'active_end',width:150">活动结束时间</th>
                 <th data-options="field:'active_tel',width:150">电话</th>
+                <th data-options="field:'update_time',width:110">创建时间</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>
         </thead>

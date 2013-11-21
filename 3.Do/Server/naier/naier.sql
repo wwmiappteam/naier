@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2013-11-20 16:51:16
+Date: 2013-11-21 14:04:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,9 +28,9 @@ CREATE TABLE `active` (
   `active_tel` varchar(20) NOT NULL,
   `active_description` text NOT NULL,
   `active_description_interface` text,
-  `update_time` datetime NOT NULL,
+  `update_time` varchar(50) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of active
@@ -38,6 +38,7 @@ CREATE TABLE `active` (
 INSERT INTO `active` VALUES ('2', '标题1', '/admin/upload/13847772851.jpg', '1月1', '2月1', '135555555551', '<p>阿斯蒂芬1</p>', '<p>阿斯蒂芬1</p>', '0000-00-00 00:00:00');
 INSERT INTO `active` VALUES ('3', '覆盖', '', '', '', '', '', '', '0000-00-00 00:00:00');
 INSERT INTO `active` VALUES ('4', '金利科技', '', '', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `active` VALUES ('5', 'asdfasf', '', '', '', '', '', '', '2013-11-21 13:51');
 
 -- ----------------------------
 -- Table structure for `advise`
@@ -49,9 +50,9 @@ CREATE TABLE `advise` (
   `custom_cellphone` varchar(20) NOT NULL,
   `advise_content` varchar(500) NOT NULL,
   `status` varchar(5) NOT NULL default '0',
-  `update_time` datetime NOT NULL,
+  `update_time` varchar(50) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of advise
@@ -61,6 +62,8 @@ INSERT INTO `advise` VALUES ('2', '1', '234234', 'asdfsadf', '0', '0000-00-00 00
 INSERT INTO `advise` VALUES ('3', '1', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
 INSERT INTO `advise` VALUES ('4', '1', '234234', 'asdfsadf', '0', '0000-00-00 00:00:00');
 INSERT INTO `advise` VALUES ('6', '18', '234234234', '234234', '1', '0000-00-00 00:00:00');
+INSERT INTO `advise` VALUES ('7', '0', '', '', '0', '2013-11-21 05:58');
+INSERT INTO `advise` VALUES ('8', '18', '234234243', 'sadfsdf', '0', '2013-11-21 05:59');
 
 -- ----------------------------
 -- Table structure for `business`
@@ -122,9 +125,9 @@ CREATE TABLE `complain` (
   `keeper_id` int(11) NOT NULL,
   `complain_content` varchar(500) NOT NULL,
   `status` varchar(5) NOT NULL default '0',
-  `update_time` datetime NOT NULL,
+  `update_time` varchar(50) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of complain
@@ -137,6 +140,8 @@ INSERT INTO `complain` VALUES ('12', '17', '18', '', '0', '0000-00-00 00:00:00')
 INSERT INTO `complain` VALUES ('13', '17', '18', '', '0', '0000-00-00 00:00:00');
 INSERT INTO `complain` VALUES ('14', '17', '18', '', '1', '0000-00-00 00:00:00');
 INSERT INTO `complain` VALUES ('16', '17', '18', '', '1', '0000-00-00 00:00:00');
+INSERT INTO `complain` VALUES ('17', '0', '0', '', '0', '2013-11-21 05:53');
+INSERT INTO `complain` VALUES ('18', '17', '19', '234234', '0', '2013-11-21 05:53');
 
 -- ----------------------------
 -- Table structure for `custom`
@@ -378,10 +383,10 @@ INSERT INTO `sys_user` VALUES ('22', 'admin', 'e10adc3949ba59abbe56e057f20f883e'
 -- View structure for `complain_view`
 -- ----------------------------
 DROP VIEW IF EXISTS `complain_view`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `complain_view` AS select `complain`.`id` AS `complainid`,`complain`.`custom_id` AS `custom_id`,`complain`.`keeper_id` AS `keeper_id`,`complain`.`complain_content` AS `complain_content`,`complain`.`status` AS `status`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`id` AS `info.id`,`keeper_type`.`id` AS `type_id`,`keeper_type`.`type_name` AS `type_name`,`custom`.`id` AS `id`,`custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name` from ((((`keeper_info` join `complain`) join `keeper_type`) join `custom`) join `orderinfo_view`) where ((`complain`.`custom_id` = `custom`.`id`) and (`complain`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `complain_view` AS select `complain`.`id` AS `complainid`,`complain`.`custom_id` AS `custom_id`,`complain`.`keeper_id` AS `keeper_id`,`complain`.`complain_content` AS `complain_content`,`complain`.`status` AS `status`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`id` AS `info.id`,`keeper_type`.`id` AS `type_id`,`keeper_type`.`type_name` AS `type_name`,`custom`.`id` AS `id`,`custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name`,`complain`.`update_time` AS `update_time` from ((((`keeper_info` join `complain`) join `keeper_type`) join `custom`) join `orderinfo_view`) where ((`complain`.`custom_id` = `custom`.`id`) and (`complain`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;
 
 -- ----------------------------
 -- View structure for `orderinfo_view`
 -- ----------------------------
 DROP VIEW IF EXISTS `orderinfo_view`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `orderinfo_view` AS select `custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_type`.`id` AS `id`,`keeper_type`.`type_name` AS `type_name`,`keeper_order`.`start_time` AS `start_time`,`keeper_order`.`end_time` AS `end_time`,`keeper_order`.`custom_id` AS `custom_id`,`keeper_order`.`keeper_id` AS `keeper_id`,`keeper_order`.`order_description` AS `order_description`,`keeper_order`.`id` AS `orderid` from (((`keeper_order` join `keeper_info`) join `keeper_type`) join `custom`) where ((`keeper_order`.`custom_id` = `custom`.`id`) and (`keeper_order`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `orderinfo_view` AS select `custom`.`custom_username` AS `custom_username`,`custom`.`custom_name` AS `custom_name`,`keeper_info`.`keeper_name` AS `keeper_name`,`keeper_info`.`keeper_type_id` AS `keeper_type_id`,`keeper_type`.`id` AS `id`,`keeper_type`.`type_name` AS `type_name`,`keeper_order`.`start_time` AS `start_time`,`keeper_order`.`end_time` AS `end_time`,`keeper_order`.`custom_id` AS `custom_id`,`keeper_order`.`keeper_id` AS `keeper_id`,`keeper_order`.`order_description` AS `order_description`,`keeper_order`.`id` AS `orderid`,`keeper_order`.`update_time` AS `update_time` from (((`keeper_order` join `keeper_info`) join `keeper_type`) join `custom`) where ((`keeper_order`.`custom_id` = `custom`.`id`) and (`keeper_order`.`keeper_id` = `keeper_info`.`id`) and (`keeper_info`.`keeper_type_id` = `keeper_type`.`id`)) ;

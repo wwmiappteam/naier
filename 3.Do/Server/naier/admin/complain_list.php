@@ -71,6 +71,7 @@ function query(){
                 <th data-options="field:'keeper_name',width:150">家政人员姓名</th>
                 <th data-options="field:'type_name',width:150">家政人员分类</th>
                 <th data-options="field:'complain_content',width:150">投诉内容</th>
+                <th data-options="field:'update_time',width:110">创建时间</th>
                 <th data-options="field:'status',width:150" formatter="statusFormater">是否处理</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>

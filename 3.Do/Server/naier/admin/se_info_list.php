@@ -61,7 +61,7 @@ function imgFormatter(value, rowData, rowIndex) {
                 <th data-options="field:'description',width:100">描述</th>
                 <th data-options="field:'special',width:100">特色</th>
                 <th data-options="field:'price',width:70">人均消费</th>
-                <th data-options="field:'update_time',width:110">更新时间</th>
+                <th data-options="field:'update_time',width:110">创建时间</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>
         </thead>
