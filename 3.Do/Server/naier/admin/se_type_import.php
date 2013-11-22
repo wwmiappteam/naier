@@ -6,7 +6,7 @@
 <?php 
 	include_once 'common.php'; 
 	include_once 'phpexcel/PHPExcel.php';
-	
+	date_default_timezone_set('PRC');
 	function getImportData($filename){
 		$filePath = $filename;
 		$PHPExcel = new PHPExcel();
@@ -45,23 +45,42 @@
 		$data = getImportData($path);
 		
 		if($data){
+				$msg = "";
 				foreach ($data as $k=>$items){
+					//$items['name']这是sheet名，也是数据库中分类名
+					$type_name = $items['name'];
+					$typedata = mysql_fetch_assoc(mysql_query("select cid from secretary_type where cat='$type_name' "));
+					if($typedata['cid']==""){
+						$msg = $msg." $type_name sheet（工作表）在系统中不存在该家政人员分类导入失败；<br/>";
+						continue;
+					}
+					$typeid=$typedata['cid'];
 					if(!empty($items['data'])){
 						foreach ($items['data'] as $key=>$item){
 							if($key == 1){
 								continue;
 							}
+							$regiondata = mysql_fetch_assoc(mysql_query("select id from secretary_region where region_name='$item[C]' "));
+							if($regiondata['id']==""){
+								$msg = $msg."$item[C] 在系统中不存在该区域信息导入失败！<br/>";
+								continue;
+							}
+							$regionid=$regiondata['id'];
 							$sql = "insert into secretary_info(title,type_id,region_id,address,tel,description,special,price,
 							images,update_time) values(";
 							$timefmt = date("Y-m-d H:i");
-							$sql = $sql."'$item[A]','$type_id','$region_id','$address','$tel','$description','$special','$price','$imgurl','$timefmt')";
+							$sql = $sql."'$item[A]','$typeid','$regionid','$item[D]','$item[B]','$item[G]','$item[E]','$item[F]','','$timefmt')";
 							mysql_query($sql,$con);
 						}
 					}
 				}
+				if($msg==""){
+					$msg = "全部数据导入成功";
+				}else{
+					$msg = $msg."其余数据导入成功";
+				}
 			}
 		
-		exit();
 	}
 ?>
 <script type="text/javascript" >
@@ -90,5 +109,6 @@ function sForm(){
 		 </ul>
 	</fieldset>
 	</form>
+	<?php if($msg!=""){echo $msg;}?>
 </body>
 </html>

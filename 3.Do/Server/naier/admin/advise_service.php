@@ -12,7 +12,7 @@
   		$json["total"] =  mysql_num_rows($result);
   		$sql = $sql." order by status asc,advise.id desc ";
   		if(isset($page)&&isset($rows)){
-	  		$sql = $sql." limit ".($page-1)*$rows.",".$page*$rows;
+	  		$sql = $sql." limit ".($page-1)*$rows.",".$rows;
   		}
   		$result = mysql_query($sql,$con);
   		$json["rows"] = array();
