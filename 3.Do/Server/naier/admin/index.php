@@ -69,6 +69,7 @@ function initframe(){
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./se_info_list.php');"  class="icon-gears">私人秘书信息</a></li>
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./se_region_list.php');"  class="icon-gears">私人秘书区域</a></li>
 		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./se_type_list.php');"  class="icon-gears">私人秘书类型</a></li>
+		        	<li><a href="javascript:void(0)" onclick="addCentFrm('./se_type_import.php');"  class="icon-gears">数据导入</a></li>
 		        </ul>
 		    </div>
 		    <div title="系统管理"  style="">

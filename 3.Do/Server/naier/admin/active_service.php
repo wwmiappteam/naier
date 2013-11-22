@@ -20,6 +20,7 @@
   			if($row['active_poster']!=""){
   				$row['active_poster']=$base.$row['active_poster'];
   			}
+  			unset($row['active_description']);
   			array_push($json["rows"], $row);
   		}
   		echo json($json);
