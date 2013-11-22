@@ -25,12 +25,13 @@
 		$tmp['keeper_experience']=$row['keeper_experience'];
 		$tmp['keeper_level']=$row['keeper_level'];
 		$tmp['keeper_professional']=$row['keeper_professional'];
-		$tmp['kkeeper_attitude']=$row['keeper_attitude'];
+		$tmp['keeper_attitude']=$row['keeper_attitude'];
 		$tmp['keeper_hardworking']=$row['keeper_hardworking'];
 		$tmp['keeper_attentive']=$row['keeper_attentive'];
 		$tmp['keeper_special']=$row['keeper_special'];
 		$tmp['keeper_introduce']=$row['keeper_introduce'];
-		array_push($json['data'], $tmp);
+		//array_push($json['data'], $tmp);
+		$json['data']=$tmp;
 	}
   	$json['msg']="";
   	echo json($json);
