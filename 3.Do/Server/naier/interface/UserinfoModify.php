@@ -15,20 +15,23 @@
 	if($address!=""){
 		$sql = $sql." ,custom_address='$address' ";
 	}
+	$json = array();
+	$json['msg'] = "";
 	
 	if($passwordNew!=""){
-		$sql = $sql." ,custom_password='$passwordNew' ";
-		$sql = $sql." where id=$Id";
-		$sql = $sql." and custom_password='$passwordInitial'";
+		$checksql = "select * from custom where id=$Id and custom_password='$passwordInitial'";
+		$resultcheck = mysql_query($checksql);
+		if(mysql_num_rows($resultcheck)!=1){
+			$json['msg'] = "请输入正确的旧密码";
+		}else{
+			$sql = $sql." ,custom_password='$passwordNew' ";
+			$sql = $sql." where id=$Id";
+			$sql = $sql." and custom_password='$passwordInitial'";
+		}
 	}else{
 		$sql = $sql." where id=$Id";
 	}
-	
-	$json = array();
-	$json['msg'] = "";
-	if(!mysql_query($sql)){
-		$json['msg'] = "请输入正确的旧密码";
-	}
+	mysql_query($sql);
   	echo json($json);
   	
 ?>

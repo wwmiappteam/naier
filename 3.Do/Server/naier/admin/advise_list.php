@@ -64,15 +64,15 @@ function query(){
 <body nav="反馈意见管理页面" class="iframebody">
 	 注：没有顾客帐号、姓名的信息是游客提出的反馈意见。
 	 <table id="dg" style="" class="easyui-datagrid"
-            data-options="rownumbers:true,singleSelect:true,pagination:true,url:'./advise_service.php?action=list',method:'get',pageList:[10,20],toolbar:'#tb'">
+            data-options="rownumbers:true,singleSelect:true,nowrap:false,pagination:true,url:'./advise_service.php?action=list',method:'get',pageList:[10,20],toolbar:'#tb'">
         <thead>
             <tr>
                 <th data-options="field:'custom_username',width:150">顾客帐号</th>
                 <th data-options="field:'custom_name',width:150">顾客姓名</th>
                 <th data-options="field:'custom_cellphone',width:150">顾客电话</th>
-                <th data-options="field:'advise_content',width:150">建议内容</th>
+                <th data-options="field:'advise_content',width:220">建议内容</th>
                 <th data-options="field:'update_time',width:110">创建时间</th>
-                <th data-options="field:'status',width:150" formatter="statusFormater">是否处理</th>
+                <th data-options="field:'status',width:100" formatter="statusFormater">是否处理</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>
         </thead>
