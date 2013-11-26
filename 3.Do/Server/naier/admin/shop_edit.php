@@ -34,13 +34,13 @@ function showfile(obj,imgid){
 	<fieldset id="myfieldset" class="myfieldset">
 	    <legend>门市信息</legend>
 	     <ul class="myform">
-		 	<li class="one"><span class="myinfo">门市名称：</span><input value=<?php echo $info['shop_name'];?> type="text" class="easyui-validatebox" data-options="required:true" name="shop_name"/><span class="red">*</span></li>
-		 	<li class="one"><span class="myinfo">电话：</span><input value=<?php echo $info['shop_tel'];?> type="text" name="shop_tel"/></li>
-		 	<li class="one"><span class="myinfo">地址：</span><input value=<?php echo $info['shop_address'];?> type="text" name="shop_address"/></li>
-		 	<li class="one"><span class="myinfo">百度经度：</span><input value=<?php echo $info['baidu_longitude'];?> type="text" name="baidu_longitude"/></li>
-		 	<li class="one"><span class="myinfo">百度纬度：</span><input value=<?php echo $info['baidu_latitude'];?> type="text" name="baidu_latitude"/></li>
-		 	<li class="one"><span class="myinfo">谷歌经度：</span><input value=<?php echo $info['google_longitude'];?> type="text" name="google_longitude"/></li>
-		 	<li class="one"><span class="myinfo">谷歌纬度：</span><input value=<?php echo $info['google_latitude'];?> type="text" name="google_latitude"/></li>
+		 	<li class="one"><span class="myinfo">门市名称：</span><input value="<?php echo $info['shop_name'];?>" type="text" class="easyui-validatebox" data-options="required:true" name="shop_name"/><span class="red">*</span></li>
+		 	<li class="one"><span class="myinfo">电话：</span><input value="<?php echo $info['shop_tel'];?>" type="text" name="shop_tel"/></li>
+		 	<li class="one"><span class="myinfo">地址：</span><input value="<?php echo $info['shop_address'];?>" type="text" name="shop_address"/></li>
+		 	<li class="one"><span class="myinfo">百度经度：</span><input value="<?php echo $info['baidu_longitude'];?>" type="text" name="baidu_longitude"/></li>
+		 	<li class="one"><span class="myinfo">百度纬度：</span><input value="<?php echo $info['baidu_latitude'];?>" type="text" name="baidu_latitude"/></li>
+		 	<li class="one"><span class="myinfo">谷歌经度：</span><input value="<?php echo $info['google_longitude'];?>" type="text" name="google_longitude"/></li>
+		 	<li class="one"><span class="myinfo">谷歌纬度：</span><input value="<?php echo $info['google_latitude'];?>" type="text" name="google_latitude"/></li>
 		 	<li class="button">
 		 		<a onclick="sForm();" href="#" class="easyui-linkbutton" >提交数据</a>
 		 	</li>
