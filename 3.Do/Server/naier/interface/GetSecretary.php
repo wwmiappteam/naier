@@ -7,7 +7,7 @@
 	$title = $_REQUEST['title'];
   	$sql = "select a.id,a.title,a.address as address,b.region_name as regionName,c.cat as typeName from secretary_info a,secretary_region b,secretary_type c where a.type_id=c.cid and a.region_id=b.id ";
 	if($typeId!=""){
-		$sql .=" and c.cid=".$typeId;
+		$sql .=" and (c.cid=".$typeId." or c.pid=".$typeId.") ";
 	}
 	if($regionId!=""){
 		$sql .= " and a.region_id=".$regionId;
