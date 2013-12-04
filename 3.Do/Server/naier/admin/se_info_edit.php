@@ -58,8 +58,8 @@ function showfile(obj,imgid){
 		 	</li>
 		 	<li class="one"><span class="myinfo">地址：</span><input value="<?php echo $info['address']?>" type="text" name="address"/></li>
 		 	<li class="one"><span class="myinfo">电话：</span><input value="<?php echo $info['tel']?>" type="text" name="tel"/></li>
-		 	<li class="one"><span class="myinfo">描述：</span><input value="<?php echo $info['description']?>" type="text" name="description"/></li>
-		 	<li class="one"><span class="myinfo">特色：</span><input value="<?php echo $info['special']?>" type="text" name="special"/></li>
+		 	<li class="three"><span class="myinfo">描述：</span><textarea rows="4" cols="100" name="description"><?php echo $info['description']?></textarea></li>
+		 	<li class="three"><span class="myinfo">特色：</span><textarea rows="4" cols="100" name="special"><?php echo $info['special']?></textarea></li>
 		 	<li class="one"><span class="myinfo">人均价格：</span><input value="<?php echo $info['price']?>" type="text" name="price"/></li>
 		 	<li class="one"><span class="myinfo">图片：</span><a onclick="showfile(this,'img0');" href="javascript:void(0);" >修改图片</a><input disabled="disabled" style="display:none;" type="file" name="images" class="myfile"/> </li>
 		 	<li class="button">

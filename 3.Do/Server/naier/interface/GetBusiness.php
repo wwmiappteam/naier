@@ -7,7 +7,7 @@
 	$json = array();
   	$json["currentPage"] = $currentPage;
 	$json["totalPage"] =  ceil(mysql_num_rows($result)/intval($pageRows));
-	$sql = $sql." order by id desc limit ".(intval($currentPage)-1)*$pageRows.",".$pageRows;
+	$sql = $sql." order by id asc limit ".(intval($currentPage)-1)*$pageRows.",".$pageRows;
 	$json["data"] = array();
 	$result = mysql_query($sql,$con);
 	while($row=mysql_fetch_assoc($result)){

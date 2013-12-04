@@ -8,8 +8,6 @@
 $(document).ready(function(){
 	//var editor1 = new UE.ui.Editor();
 	//editor1.render("body");
-	var editor2 = new UE.ui.Editor();
-	editor2.render("canshu");
 //	var editor3 = new UE.ui.Editor();
 //	editor3.render("memo");
 });
@@ -56,7 +54,7 @@ function sForm(){
 		 	<li class="one"><span class="myinfo">勤劳分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" type="text" name="keeper_hardworking"/></li>
 		 	<li class="one"><span class="myinfo">细心分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" type="text" name="keeper_attentive"/></li>
 		 	<li class="one"><span class="myinfo">特长：</span><input type="text" name="keeper_special"/></li>
-		 	<li class="one"><span class="myinfo">自我介绍：</span><input type="text" name="keeper_introduce"/></li>
+		 	<li class="three"><span class="myinfo">自我介绍：</span><textarea rows="4" cols="100" name="keeper_introduce"></textarea></li>
 		 	<li class="one"><span class="myinfo">是否首页显示：</span><input type="checkbox" value="true" name="keeper_ispush" />【勾选后将在私人管家首页显示】</li>
 		 	<li class="button">
 		 		<a onclick="sForm();" href="#" class="easyui-linkbutton" >提交数据</a>

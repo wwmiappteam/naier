@@ -34,7 +34,7 @@
 					$tmp["orderID"] = $subrow["id"];
 					$tmp["keeperID"] = $subrow["keeper_id"];
 					$tmp["keeperName"] = $subrow["keeper_name"];
-					$tmp["keeperTypeDescription"] = $subrow["type_description"];
+					$tmp["keeperTypeDescription"] = $subrow["type_name"];
 					if($subrow["keeper_photo"]!=""){
 						$tmp["keeperPhoto"] = $base.$subrow["keeper_photo"];
 					}else{

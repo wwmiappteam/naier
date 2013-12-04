@@ -48,8 +48,8 @@ function sForm(){
 		 	</li>
 		 	<li class="one"><span class="myinfo">地址：</span><input type="text" name="address"/></li>
 		 	<li class="one"><span class="myinfo">电话：</span><input type="text" name="tel"/></li>
-		 	<li class="one"><span class="myinfo">描述：</span><input type="text" name="description"/></li>
-		 	<li class="one"><span class="myinfo">特色：</span><input type="text" name="special"/></li>
+		 	<li class="three"><span class="myinfo">描述：</span><textarea rows="4" cols="100" name="description"></textarea></li>
+		 	<li class="three"><span class="myinfo">特色：</span><textarea rows="4" cols="100" name="special"></textarea></li>
 		 	<li class="one"><span class="myinfo">人均价格：</span><input type="text" name="price"/></li>
 		 	<li class="one"><span class="myinfo">图片：</span><input type="file" name="images" class="myfile"/></li>
 		 	<li class="button">

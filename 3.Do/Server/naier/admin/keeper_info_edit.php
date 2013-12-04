@@ -36,7 +36,7 @@ function showfile(obj,imgid){
 	    <legend>人员信息</legend>
 		 <ul class="myform">
 		 	<li>
-	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["keeper_photo"]!=""){?><span id="img0" >照片：<img  width="100px" height="50px" src="<?php echo $base.$info["keeper_photo"];?>" /></span><?php }?>
+	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["keeper_photo"]!=""){?><span id="img0" >照片：<img  width="50px" height="100px" src="<?php echo $base.$info["keeper_photo"];?>" /></span><?php }?>
 	    	</li>
 	    	<hr/>
 		 	<li class="one"><span class="myinfo">姓名：</span><input value="<?php echo $info['keeper_name']?>" type="text" class="easyui-validatebox" data-options="required:true" name="keeper_name"/><span class="red">*</span></li>
@@ -65,7 +65,7 @@ function showfile(obj,imgid){
 		 	<li class="one"><span class="myinfo">勤劳分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" value="<?php echo $info['keeper_hardworking']?>" type="text" name="keeper_hardworking"/></li>
 		 	<li class="one"><span class="myinfo">细心分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" value="<?php echo $info['keeper_attentive']?>" type="text" name="keeper_attentive"/></li>
 		 	<li class="one"><span class="myinfo">特长：</span><input value="<?php echo $info['keeper_special']?>" type="text" name="keeper_special"/></li>
-		 	<li class="one"><span class="myinfo">自我介绍：</span><input value="<?php echo $info['keeper_introduce']?>" type="text" name="keeper_introduce"/></li>
+		 	<li class="three"><span class="myinfo">自我介绍：</span><textarea rows="4" cols="100" name="keeper_introduce"><?php echo $info['keeper_introduce']?></textarea></li>
 		 	<li class="one"><span class="myinfo">是否首页显示：</span><input <?php if($info['keeper_ispush']=="true"){echo 'checked="checked"';}?>  type="checkbox" value="true" name="keeper_ispush" />【勾选后将在私人管家首页显示】</li>
 		 	<li class="button">
 		 		<a onclick="sForm();" href="#" class="easyui-linkbutton" >提交数据</a>

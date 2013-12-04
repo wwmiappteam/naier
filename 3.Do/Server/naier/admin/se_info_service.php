@@ -6,11 +6,10 @@
 	if($action=="list"){
 		$page = $_REQUEST["page"];
 		$rows = $_REQUEST["rows"];
-		$sql = "select * from secretary_info ";
-		$result = mysql_query($sql,$con);
 		$json = array();
-  		$json["total"] =  mysql_num_rows($result);
   		$sql = "select a.*,b.region_name,c.cat from secretary_info a,secretary_region b,secretary_type c where a.type_id=c.cid and a.region_id=b.id ";
+		$result = mysql_query($sql,$con);
+  		$json["total"] =  mysql_num_rows($result);
   		$sql = $sql." order by id desc ";
   		if(isset($page)&&isset($rows)){
 	  		$sql = $sql." limit ".($page-1)*$rows.",".$rows;

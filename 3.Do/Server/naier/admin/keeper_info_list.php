@@ -40,7 +40,7 @@ function imgFormatter(value, rowData, rowIndex) {
 	if(value == ''){
 		return '';
 	}
-	return '<img  width="120px" height="60px" src="'+value+'"/>';
+	return '<img  width="60px" height="120px" src="'+value+'"/>';
 }
 </script>
 </head>
@@ -49,7 +49,7 @@ function imgFormatter(value, rowData, rowIndex) {
 		 <a href="./keeper_info_add.php" data-options="iconCls:'icon-add'" class="easyui-linkbutton">添加人员信息</a>
 	 </div>
 	 <table id="dg" style="" class="easyui-datagrid"
-            data-options="rownumbers:true,singleSelect:true,pagination:true,url:'./keeper_info_service.php?action=list',method:'get',pageList:[10,20],toolbar:'#tb'">
+            data-options="rownumbers:true,singleSelect:true,nowrap:false,pagination:true,url:'./keeper_info_service.php?action=list',method:'get',pageList:[10,20],toolbar:'#tb'">
         <thead>
             <tr>
                 <th data-options="field:'keeper_name',width:100">姓名</th>
