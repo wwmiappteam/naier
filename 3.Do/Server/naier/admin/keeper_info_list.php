@@ -40,7 +40,7 @@ function imgFormatter(value, rowData, rowIndex) {
 	if(value == ''){
 		return '';
 	}
-	return '<img  width="60px" height="120px" src="'+value+'"/>';
+	return '<img  width="95px" height="95px" src="'+value+'"/>';
 }
 </script>
 </head>

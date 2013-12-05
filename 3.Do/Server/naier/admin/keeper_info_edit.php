@@ -36,7 +36,7 @@ function showfile(obj,imgid){
 	    <legend>人员信息</legend>
 		 <ul class="myform">
 		 	<li>
-	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["keeper_photo"]!=""){?><span id="img0" >照片：<img  width="50px" height="100px" src="<?php echo $base.$info["keeper_photo"];?>" /></span><?php }?>
+	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["keeper_photo"]!=""){?><span id="img0" >照片：<img  width="95px" height="95px" src="<?php echo $base.$info["keeper_photo"];?>" /></span><?php }?>
 	    	</li>
 	    	<hr/>
 		 	<li class="one"><span class="myinfo">姓名：</span><input value="<?php echo $info['keeper_name']?>" type="text" class="easyui-validatebox" data-options="required:true" name="keeper_name"/><span class="red">*</span></li>

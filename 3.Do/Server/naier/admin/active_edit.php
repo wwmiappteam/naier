@@ -38,7 +38,7 @@ function showfile(obj,imgid){
 	    <legend>新闻活动信息</legend>
 	    <ul class="myform">
 	    	<li>
-	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["active_poster"]!=""){?><span id="img0" >海报：<img  width="50px" height="100px" src="<?php echo $base.$info["active_poster"];?>" /></span><?php }?>
+	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($info["active_poster"]!=""){?><span id="img0" >海报：<img  width="80px" height="120px" src="<?php echo $base.$info["active_poster"];?>" /></span><?php }?>
 	    	</li>
 	    	<hr/>
 		 	<li class="one"><span class="myinfo">活动标题：</span><input type="text" value="<?php echo $info['active_title'];?>" class="easyui-validatebox" data-options="required:true" name="active_title"/><span class="red">*</span></li>
