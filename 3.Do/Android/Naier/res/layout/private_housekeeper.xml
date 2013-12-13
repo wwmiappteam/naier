@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/private_housekeeper_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/naier_top_title_layout" />
+
+    <HorizontalScrollView
+        android:id="@+id/hsv_private_housekeeper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/private_housekeeper_heads_bg"
+        android:scrollbars="none"
+        android:padding="@dimen/google_normal" >
+
+        <LinearLayout
+            android:id="@+id/llt_private_housekeeper_imgs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/google_normal_half"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/lv_private_house_keeper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp"
+        android:divider="@color/black"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

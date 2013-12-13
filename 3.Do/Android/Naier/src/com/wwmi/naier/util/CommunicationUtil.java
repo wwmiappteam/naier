@@ -10,6 +10,7 @@ package com.wwmi.naier.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 
 import com.wwmi.naier.application.NaierApplication;
 
@@ -59,7 +60,7 @@ public class CommunicationUtil {
         }
         return false;
     }
-    
+
     /**
      * Description:更新NaierApplication中的网络状态
      * 
@@ -72,4 +73,41 @@ public class CommunicationUtil {
                 || isMobileConnected(context));
         application = null;
     }
+
+    // /**
+    // * 防止出现NetworkOnMainThreadException 异常处理
+    // */
+    // public static void initStrictMode() {
+    // // 判断操作系统是Android版本3.0以上版本
+    // if (android.os.Build.VERSION.SDK_INT >= 11) {
+    // StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+    // .detectDiskReads().detectDiskWrites().detectNetwork()
+    // .penaltyLog().build());
+    //
+    // StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+    // .detectLeakedSqlLiteObjects().penaltyLog().penaltyDeath()
+    // .build());
+    // }
+    // }
+    /**
+     * Description:获取网络状态
+     * 
+     * @param context
+     */
+    public static boolean getNetworkInfo(Context context) {
+        return isWifiConnected(context) || isMobileConnected(context);
+    }
+
+    /**
+     * Description:判断Sd卡是否存在
+     * 
+     * @return
+     */
+    public static boolean sdcardExists() {
+        return Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState());
+    }
+
+
+
 }

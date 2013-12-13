@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/naier_top_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/complaint_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:onClick="chooseKeeper"
+                android:src="@drawable/complaint_btn_bg_keeperadd" />
+
+            <TextView
+                android:id="@+id/complaint_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/complaint_photo"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/complaint_edt_content"
+            style="@style/current_text"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/fillet_shape"
+            android:gravity="top"
+            android:hint="请输入您的投诉内容"
+            android:maxLength="500"
+            android:padding="7dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="2.3" />
+
+            <ImageView
+                android:id="@+id/complaint_btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:onClick="submit"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_submit_selector" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/naier_top_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dip"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/feedback_edt_content"
+            style="@style/current_text"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/fillet_shape"
+            android:gravity="top"
+            android:hint="请输入您宝贵的意见"
+            android:maxLength="500"
+            android:padding="7dp" />
+
+        <com.wwmi.naier.view.RegisterItemView
+            android:id="@+id/feedback_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/register_item_height"
+            android:layout_margin="5dp" >
+        </com.wwmi.naier.view.RegisterItemView>
+
+        <ImageView
+            android:id="@+id/feedback_btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:onClick="submit"
+            android:src="@drawable/btn_submit_selector" />
+    </LinearLayout>
+
+</LinearLayout>

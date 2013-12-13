@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/core_bussiness_item_selector"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txt_core_business_title"
+        style="@style/core_business_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:ellipsize="end"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp" >
+
+        <TextView
+            style="@style/core_business_list_price_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格：" />
+
+        <TextView
+            android:id="@+id/txt_core_business_price"
+            style="@style/core_business_list_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

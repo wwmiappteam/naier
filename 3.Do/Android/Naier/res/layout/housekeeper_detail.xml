@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/house_keeper_detail_bg" >
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/naier_top_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/rlt_housekeeper_detail_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="@dimen/google_normal_half"
+        android:background="@drawable/housekeeper_detail_text_bg"
+        android:padding="@dimen/google_normal" >
+
+        <ImageView
+            android:id="@+id/iv_housekeeper_detail_head"
+            android:layout_width="107px"
+            android:layout_height="107px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/google_normal"
+            android:background="@drawable/private_housekeeper_heads_default" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/google_normal"
+            android:layout_marginTop="@dimen/google_normal"
+            android:layout_toRightOf="@id/iv_housekeeper_detail_head"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓  名：" />
+
+                <TextView
+                    android:id="@+id/tv_housekeep_detail_name"
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性   别：" />
+
+                <TextView
+                    android:id="@+id/tv_housekeep_detail_sex"
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年  龄：" />
+
+                <TextView
+                    android:id="@+id/tv_housekeep_detail_age"
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="服务年限：" />
+
+                <TextView
+                    android:id="@+id/tv_housekeep_detail_experience"
+                    style="@style/housekeeper_detail_text_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llt_housekeeper_detail_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlt_housekeeper_detail_top"
+        android:background="@color/house_keeper_detail_text_top"
+        android:orientation="vertical"
+        android:padding="@dimen/google_normal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_level" />
+
+            <ImageView
+                android:id="@+id/iv_housekeeper_detail_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/google_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_career" />
+
+            <com.wwmi.naier.view.LevelImageView
+                android:id="@+id/liv_housekeeper_detail_career"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/google_normal"
+                android:background="@drawable/housekeeper_detail_pb" />
+
+            <TextView
+                android:id="@+id/tv_housekeeper_detail_level_career"
+                style="@style/housekeeper_detail_pb_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_manner" />
+
+            <com.wwmi.naier.view.LevelImageView
+                android:id="@+id/liv_housekeeper_detail_manner"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/google_normal"
+                android:background="@drawable/housekeeper_detail_pb" />
+
+            <TextView
+                android:id="@+id/tv_housekeeper_detail_level_manner"
+                style="@style/housekeeper_detail_pb_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_hardworking" />
+
+            <com.wwmi.naier.view.LevelImageView
+                android:id="@+id/liv_housekeeper_detail_hardworking"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/google_normal"
+                android:background="@drawable/housekeeper_detail_pb" />
+
+            <TextView
+                android:id="@+id/tv_housekeeper_detail_level_hardworking"
+                style="@style/housekeeper_detail_pb_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_careful" />
+
+            <com.wwmi.naier.view.LevelImageView
+                android:id="@+id/liv_housekeeper_detail_careful"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/google_normal"
+                android:background="@drawable/housekeeper_detail_pb" />
+
+            <TextView
+                android:id="@+id/tv_housekeeper_detail_level_careful"
+                style="@style/housekeeper_detail_pb_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/housekeeper_detail_mid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/housekeeper_detail_servie_speciality" />
+
+            <TextView
+                android:id="@+id/tv_housekeeper_detail_speciality"
+                style="@style/housekeeper_detail_pb_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/google_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_housekeeper_detail_order"
+        android:layout_below="@id/llt_housekeeper_detail_mid"
+        android:layout_margin="@dimen/google_normal_half"
+        android:background="@drawable/housekeeper_detail_text_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/google_normal" >
+
+        <TextView
+            style="@style/housekeeper_detail_text_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/google_normal"
+            android:layout_marginTop="@dimen/google_normal"
+            android:text="@string/housekeeper_detail_introduce" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/google_normal_half"
+            android:layout_marginLeft="@dimen/google_normal"
+            android:layout_marginRight="@dimen/google_normal"
+            android:layout_marginTop="@dimen/google_normal_half"
+            android:background="@color/grey_black" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_housekeeper_detail_brief"
+                    style="@style/housekeeper_detail_text_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/google_normal"
+                    android:layout_marginRight="@dimen/google_normal" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_housekeeper_detail_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/google_normal"
+        android:layout_marginRight="@dimen/google_normal"
+        android:layout_marginTop="@dimen/google_normal_half"
+        android:background="@drawable/btn_housekeeper_detail" />
+
+</RelativeLayout>

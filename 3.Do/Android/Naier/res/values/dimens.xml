@@ -3,5 +3,25 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="google_normal">8dp</dimen>
+    <dimen name="google_normal_half">4dp</dimen>
+    <dimen name="google_normal_double">16dp</dimen>
+    <dimen name="font_size_title">22sp</dimen>
+    <dimen name="tab_top_title_height">40dp</dimen>
+
+    <!-- NaierMoreActivity -->
+    <dimen name="more_font_size">16dp</dimen>
+    <dimen name="more_item_height">45dp</dimen>
+    <!-- LoginActivity -->
+    <dimen name="login_margin">50dp</dimen>
+    <!-- LoginActivity -->
+    <dimen name="register_item_height">40dp</dimen>
+    <dimen name="register_item_margin">3dp</dimen>
+    <!-- PersonalActivity -->
+    <dimen name="personal_font_size">16dp</dimen>
+    <dimen name="personal_item_height">45dp</dimen>
+    
+    
+    <dimen name="order_service_name">16sp</dimen>
 
 </resources>

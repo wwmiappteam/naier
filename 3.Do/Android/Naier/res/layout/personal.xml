@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <include layout="@layout/naier_top_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/personal_name"
+            style="@style/personal_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/personal_bg_name"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:onClick="clickBtn"
+            android:paddingLeft="6dp" />
+
+        <TextView
+            android:id="@+id/personal_phone"
+            style="@style/personal_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/personal_phone_selector"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:onClick="clickBtn"
+            android:paddingLeft="6dp"
+            android:paddingRight="25dp" />
+
+        <TextView
+            android:id="@+id/personal_address"
+            style="@style/personal_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/personal_phone_selector"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:onClick="clickBtn"
+            android:paddingLeft="6dp"
+            android:paddingRight="25dp" />
+
+        <TextView
+            style="@style/personal_text1"
+            android:id="@+id/personal_no_orderlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/personal_no_orderlist"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/personal_lly_orderlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/personal_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="6dp"
+                android:background="@drawable/personal_bg_ordertitle"
+                android:text="@string/personal_orderlist" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/personal_bg_listtitle" >
+
+                <TextView
+                    style="@style/personal_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="@string/personal_listtitle_photo" />
+
+                <TextView
+                    style="@style/personal_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/personal_listtitle_name" />
+
+                <TextView
+                    style="@style/personal_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/personal_listtitle_time" />
+
+                <TextView
+                    style="@style/personal_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="@string/personal_listtitle_type" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/personal_lst_orders"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0dp"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

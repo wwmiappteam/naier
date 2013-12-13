@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/order_service_shape"
+    android:padding="@dimen/google_normal_double" >
+
+    <DatePicker
+        android:id="@+id/dp_order_service_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <TimePicker
+        android:id="@+id/tp_order_service_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_order_service_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/google_normal"
+        android:text="时间：2013-5-6 12:50"
+        android:textColor="@color/black"
+        android:textSize="@dimen/order_service_name" />
+
+    <Button
+        android:id="@+id/btn_order_service_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/google_normal"
+        android:text="确      定"
+        android:textColor="@color/black_bg"
+        android:textSize="@dimen/order_service_name" />
+
+</LinearLayout>

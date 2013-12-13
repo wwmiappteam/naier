@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/private_housekeeper_bg" >
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/naier_top_title_layout" />
+
+    <ImageView
+        android:id="@+id/iv_order_service_keeper"
+        android:layout_width="107px"
+        android:layout_height="107px"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/google_normal_half"
+        android:layout_marginTop="@dimen/google_normal_double"
+        android:background="@drawable/private_housekeeper_heads_default" />
+
+    <TextView
+        android:id="@+id/tv_order_service_keeper_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_order_service_keeper"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/google_normal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/order_service_name" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_order_service_submit"
+        android:layout_below="@id/tv_order_service_keeper_name"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/google_normal"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_start" />
+
+            <TextView
+                android:id="@+id/tv_order_service_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_edt"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="点击选择开始时间"
+                android:textColor="@color/housekeeper_detail_hint"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/google_normal"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_finish" />
+
+            <TextView
+                android:id="@+id/tv_order_service_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_edt"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="点击选择结束时间"
+                android:textColor="@color/housekeeper_detail_hint"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/google_normal"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_orderred" />
+
+            <TextView
+                android:id="@+id/tv_order_service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_service_img_orderred_right"
+                android:clickable="true"
+                android:gravity="center"
+                android:textColor="@color/housekeeper_detail_hint"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_order_service_other"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/google_normal"
+            android:background="@drawable/order_service_shape"
+            android:gravity="top|left"
+            android:maxLength="200"
+            android:hint="其他要求"
+            android:padding="@dimen/google_normal_half"
+            android:textColor="@color/black_bg" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_order_service_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/google_normal"
+        android:layout_marginRight="@dimen/google_normal_double"
+        android:layout_marginTop="@dimen/google_normal_half"
+        android:background="@drawable/btn_order_service_submit" />
+
+</RelativeLayout>

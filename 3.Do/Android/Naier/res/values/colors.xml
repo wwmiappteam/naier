@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="housekeeper_detail_hint">#a0a0a0</color>
+    <color name="red">#F00</color>
+    <color name="green">#0F0</color>
+    <color name="blue">#00F</color>
+    <color name="grey">#ffe4e4e4</color>
+    <color name="grey_white">#fff6f6f6</color>
+    <color name="grey_black">#ffcccccc</color>
+    <color name="black_bg">#ff454545</color>
+    <color name="alpha_bg">#00ffffff</color>
+    <color name="house_keeper_detail_bg">#e4e4e4</color>
+    <color name="house_keeper_detail_text_top">#434343</color>
+</resources>

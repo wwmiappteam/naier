@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/google_normal"
+    android:paddingRight="@dimen/google_normal"
+    android:paddingTop="@dimen/google_normal_half"
+    android:paddingBottom="@dimen/google_normal_half" >
+
+    <TextView
+        android:id="@+id/tv_private_housekeeper_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/private_housekeeper_tab_head"
+        android:gravity="center"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/tv_private_housekeeper_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/private_housekeeper_tab_content"
+        android:gravity="center_vertical"
+        android:singleLine="true" />
+
+</LinearLayout>

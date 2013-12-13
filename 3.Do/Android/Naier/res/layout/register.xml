@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <include layout="@layout/naier_top_title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fillet_shape"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <com.wwmi.naier.view.RegisterItemView
+                    android:id="@+id/register_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_item_height"
+                    android:layout_margin="@dimen/register_item_margin" >
+                </com.wwmi.naier.view.RegisterItemView>
+
+                <com.wwmi.naier.view.RegisterItemView
+                    android:id="@+id/register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_item_height"
+                    android:layout_margin="@dimen/register_item_margin" >
+                </com.wwmi.naier.view.RegisterItemView>
+
+                <com.wwmi.naier.view.RegisterItemView
+                    android:id="@+id/register_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_item_height"
+                    android:layout_margin="@dimen/register_item_margin" >
+                </com.wwmi.naier.view.RegisterItemView>
+
+                <com.wwmi.naier.view.RegisterItemView
+                    android:id="@+id/register_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_item_height"
+                    android:layout_margin="@dimen/register_item_margin" >
+                </com.wwmi.naier.view.RegisterItemView>
+
+                <com.wwmi.naier.view.RegisterItemView
+                    android:id="@+id/register_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/register_item_height"
+                    android:layout_margin="@dimen/register_item_margin" >
+                </com.wwmi.naier.view.RegisterItemView>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/register_btn_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/register_item_margin"
+                android:layout_marginRight="@dimen/register_item_margin"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:onClick="clickRegister"
+                android:scaleType="fitXY"
+                android:src="@drawable/register_btn_selector" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
