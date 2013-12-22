@@ -48,7 +48,7 @@ function sForm(){
 		 	<li class="one"><span class="myinfo">年龄：</span><input type="text" name="keeper_age"/></li>
 		 	<li class="one"><span class="myinfo">照片：</span><input type="file" name="keeper_photo" class="myfile"/></li>
 		 	<li class="one"><span class="myinfo">经验：</span><input type="text" name="keeper_experience"/></li>
-		 	<li class="one"><span class="myinfo">级别：</span><input class="easyui-numberspinner" data-options="min:0,max:5,editable:true,precision:0" type="text" name="keeper_level"/></li>
+		 	<li class="one"><span class="myinfo">级别：</span><input class="easyui-numberspinner" data-options="min:0,max:6,editable:true,precision:0" type="text" name="keeper_level"/></li>
 		 	<li class="one"><span class="myinfo">专业分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" type="text" name="keeper_professional"/></li>
 		 	<li class="one"><span class="myinfo">态度分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" type="text" name="keeper_attitude"/></li>
 		 	<li class="one"><span class="myinfo">勤劳分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" type="text" name="keeper_hardworking"/></li>

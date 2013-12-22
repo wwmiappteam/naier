@@ -59,7 +59,7 @@ function showfile(obj,imgid){
 		 	<li class="one"><span class="myinfo">年龄：</span><input value="<?php echo $info['keeper_age']?>" type="text" name="keeper_age"/></li>
 		 	<li class="one"><span class="myinfo">照片：</span><a onclick="showfile(this,'img0');" href="javascript:void(0);" >修改图片</a><input disabled="disabled" style="display:none;" type="file" name="keeper_photo" class="myfile"/> </li>
 		 	<li class="one"><span class="myinfo">经验：</span><input value="<?php echo $info['keeper_experience']?>" type="text" name="keeper_experience"/></li>
-		 	<li class="one"><span class="myinfo">级别：</span><input class="easyui-numberspinner" data-options="min:0,max:5,editable:true,precision:0" value="<?php echo $info['keeper_level']?>" type="text" name="keeper_level"/></li>
+		 	<li class="one"><span class="myinfo">级别：</span><input class="easyui-numberspinner" data-options="min:0,max:6,editable:true,precision:0" value="<?php echo $info['keeper_level']?>" type="text" name="keeper_level"/></li>
 		 	<li class="one"><span class="myinfo">专业分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" value="<?php echo $info['keeper_professional']?>" type="text" name="keeper_professional"/></li>
 		 	<li class="one"><span class="myinfo">态度分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" value="<?php echo $info['keeper_attitude']?>" type="text" name="keeper_attitude"/></li>
 		 	<li class="one"><span class="myinfo">勤劳分值：</span><input class="easyui-numberspinner" data-options="min:0,max:10,editable:true,precision:0" value="<?php echo $info['keeper_hardworking']?>" type="text" name="keeper_hardworking"/></li>
