@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+'<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -58,10 +58,9 @@ function imgFormatter(value, rowData, rowIndex) {
                 <th data-options="field:'keeper_gender',width:50">性别</th>
                 <th data-options="field:'keeper_age',width:50">年龄</th>
                 <th data-options="field:'keeper_photo',width:100,formatter:imgFormatter">照片</th>
-                <th data-options="field:'keeper_experience',width:100">经验</th>
+                <th data-options="field:'keeper_experience',width:120">经验</th>
                 <th data-options="field:'keeper_level',width:50">级别</th>
-                <th data-options="field:'keeper_special',width:110">特长</th>
-                <th data-options="field:'keeper_introduce',width:120">自我介绍</th>
+                <th data-options="field:'keeper_special',width:150">特长</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>
             </tr>
         </thead>

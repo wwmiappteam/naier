@@ -29,6 +29,7 @@
   			$subresult = mysql_query($subsql);
   			$subrow = mysql_fetch_assoc($subresult);
   			$row['type_name'] = $subrow['type_name'];
+  			unset($row['keeper_introduce']);
   			array_push($json["rows"], $row);
   		}
   		echo json($json);
