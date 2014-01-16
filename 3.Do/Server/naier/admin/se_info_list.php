@@ -52,14 +52,12 @@ function imgFormatter(value, rowData, rowIndex) {
             data-options="rownumbers:true,nowrap:false,singleSelect:true,pagination:true,url:'./se_info_service.php?action=list',method:'get',pageList:[10,20],toolbar:'#tb'">
         <thead>
             <tr>
-                <th data-options="field:'title',width:100">标题</th>
+                <th data-options="field:'title',width:150">标题</th>
                 <th data-options="field:'type_name',width:70">分类名</th>
                 <th data-options="field:'region_name',width:70">区域名</th>
-                <th data-options="field:'address',width:100">地址</th>
-                <th data-options="field:'tel',width:100">电话</th>
+                <th data-options="field:'address',width:230">地址</th>
+                <th data-options="field:'tel',width:150">电话</th>
                 <th data-options="field:'images',width:100,formatter:imgFormatter">图片</th>
-                <th data-options="field:'description',width:130">描述</th>
-                <th data-options="field:'special',width:130">特色</th>
                 <th data-options="field:'price',width:70">人均消费</th>
                 <th data-options="field:'update_time',width:110">创建时间</th>
                 <th field="optFormater" width="150px" formatter="optFormater"  align="center">操作</th>

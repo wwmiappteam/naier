@@ -27,8 +27,8 @@
   			}else{
   				$tmp['images'] = "";
   			}
-  			$tmp['description'] = $row['description'];
-  			$tmp['special'] = $row['special'];
+  			//$tmp['description'] = $row['description'];
+  			//$tmp['special'] = $row['special'];
   			$tmp['price'] = $row['price'];
   			$tmp['type_name'] = $row['cat'];
   			$tmp['region_name'] = $row['region_name'];
