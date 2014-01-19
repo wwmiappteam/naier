@@ -4,6 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <?php 
+	set_time_limit(0);
+	error_reporting(0);
+	ini_set('html_errors',false);
+	ini_set('display_errors',false);
 	include_once 'common.php'; 
 	include_once 'phpexcel/PHPExcel.php';
 	date_default_timezone_set('PRC');
@@ -60,20 +64,35 @@
 							if($key == 1){
 								continue;
 							}
-							$regiondata = mysql_fetch_assoc(mysql_query("select id from secretary_region where region_name='$item[C]' "));
+							$tmp_item = "REPLACE(REPLACE('".$item[C]."', CHAR(10),''), CHAR(13),'')";
+							$regiondata = mysql_fetch_assoc(mysql_query("select id from secretary_region where region_name=$tmp_item "));
+							$regionid = "";
 							if($regiondata['id']==""){
-								$msg = $msg."$item[C] 在系统中不存在该区域信息导入失败！<br/>";
-								continue;
+								$insert_region = "insert into secretary_region(region_name) values('$item[C]')";
+								mysql_query($insert_region,$con);
+								$regionid = mysql_insert_id();
+							}else{
+								$regionid=$regiondata['id'];
 							}
-							$regionid=$regiondata['id'];
-							$sql = "insert into secretary_info(title,type_id,region_id,address,tel,description,special,price,
-							images,update_time) values(";
-							$timefmt = date("Y-m-d H:i");
-							$sql = $sql."'$item[A]','$typeid','$regionid','$item[D]','$item[B]','$item[G]','$item[E]','$item[F]','','$timefmt')";
-							mysql_query($sql,$con);
+							$tmp_itemA = "REPLACE(REPLACE('".$item[A]."', CHAR(10),''), CHAR(13),'')";
+							$titledata = mysql_fetch_assoc(mysql_query("select title from secretary_info where title=$tmp_itemA "));
+							if($titledata['title']==""){
+								$sql = "insert into secretary_info(title,type_id,region_id,address,tel,description,special,price,
+								images,update_time) values(";
+								$timefmt = date("Y-m-d H:i");
+								$sql = $sql."'$item[A]','$typeid','$regionid','$item[D]','$item[B]','$item[G]','$item[E]','$item[F]','','$timefmt')";
+								mysql_query($sql,$con);
+							}
 						}
 					}
 				}
+				$updatesql = "UPDATE secretary_info SET title = REPLACE(REPLACE(title, CHAR(10),''), CHAR(13),''),
+				address = REPLACE(REPLACE(address, CHAR(10),''), CHAR(13),''),
+				tel = REPLACE(REPLACE(tel, CHAR(10),''), CHAR(13),''),
+				description =REPLACE(REPLACE(description, CHAR(10),''), CHAR(13),''),
+				special = REPLACE(REPLACE(special, CHAR(10),''), CHAR(13),''),
+				price = REPLACE(REPLACE(price, CHAR(10),''), CHAR(13),'')";
+				mysql_query($updatesql);
 				if($msg==""){
 					$msg = "全部数据导入成功";
 				}else{
